@@ -559,7 +559,9 @@ func (kl *Kubelet) syncLoopIteration(configCh <-chan kubetypes.PodUpdate, handle
 7. 总结一下
 
 [x] list 和 watch 负责从apisever拉取pod信息，更新本地的cache，并全量推cache至source channel
+
 [x] pod source 负责对比 pod source内的pod 和 cache之间的差别，决定对pod做相应处理并投递至 update channel
+
 [x] kubelet 负责从updates channel里面读取不同类别的信息，进行相应的处理
 
 
